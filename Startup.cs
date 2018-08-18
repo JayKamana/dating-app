@@ -37,6 +37,7 @@ namespace DatingApp.API
       services.AddTransient<Seed>();
       services.AddMvc();
       services.AddCors();
+      services.AddScoped<IDatingRepository, DatingRepository>();
       services.AddScoped<IAuthRepository, AuthRepository>();
       services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
